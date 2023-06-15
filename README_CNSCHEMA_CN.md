@@ -286,7 +286,7 @@ DeepKE-cnSchema特别版为支持中文领域知识图谱构建推出的开箱�
 ### [联合三元组抽取](https://github.com/zjunlp/DeepKE/tree/main/example/triple)
 用户可以先将上述模型下载至本地，然后使用[example/triple](https://github.com/zjunlp/DeepKE/tree/main/example/triple)中的代码进行三元组抽取。如果单句中存在超过两个以上的实体数，可能在一些实体对中会存在预测不准确的问题，那是因为这些实体对并没有被加入训练集中进行训练，所以需要进一步判断，具体使用步骤如下：
 
-1. 将`conf`文件夹中的`predict.yaml`中的`text`修改为预测文本，`nerfp`修改为ner模型文件夹地址，`refp`为re模型地址
+1. 将`conf`文件夹中的[`predict.yaml`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/predict.yaml)中的`text`修改为预测文本，`nerfp`修改为ner模型文件夹地址，`refp`为re模型地址
 2. 进行预测。
 
     ```bash
@@ -322,7 +322,7 @@ DeepKE-cnSchema特别版为支持中文领域知识图谱构建推出的开箱�
 如果需要使用自定义的数据进行训练，步骤如下：
 
 1. 下载自定义的[数据集](https://drive.google.com/drive/folders/1zA8Ichx9nzU3GD92ptdyR_nmARB_7ovg)，将其放入命名为`data`的文件夹中
-2. 将`conf`文件夹中的`train.yaml`中的`bert_model`修改为指定模型，用户可以通过修改yaml文件选择不同的模型进行训练（推荐直接下载模型，设置`bert_model`为模型路径）
+2. 将[`conf`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/)文件夹中的`train.yaml`中的`bert_model`修改为指定模型，用户可以通过修改yaml文件选择不同的模型进行训练（推荐直接下载模型，设置`bert_model`为模型路径）
 3. 修改`train.yaml`中的`labels`为`data/type.txt`中所用到的标签
 4. 进行训练
 
@@ -335,7 +335,7 @@ DeepKE-cnSchema特别版为支持中文领域知识图谱构建推出的开箱�
 如果需要使用其他模型进行训练，步骤如下：
 
 1. 下载自定义的[数据集](https://drive.google.com/drive/folders/1wb_QIZduKDwrHeri0s5byibsSQrrJTEv)，将其重命名为`data`
-2. 将`conf`文件夹中的`train.yaml`为`lm`,`lm.yaml`中的`lm_file`修改为指定预训练模型，`embedding.yaml`中`num_relations`为关系的个数如51，用户可以通过修改yaml文件选择不同的模型进行训练
+2. 将[`conf`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/)文件夹中的`train.yaml`为`lm`,`lm.yaml`中的`lm_file`修改为指定预训练模型，`embedding.yaml`中`num_relations`为关系的个数如51，用户可以通过修改yaml文件选择不同的模型进行训练
 3. 进行训练。
 
     ```bash
