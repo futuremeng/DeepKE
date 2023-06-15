@@ -33,6 +33,10 @@ DeepKE 是一个开源的知识图谱抽取与构建工具，支持低资源、�
 ### 使用说明
 
 ```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+```
 pip install -r requirements.txt
 ```
 
