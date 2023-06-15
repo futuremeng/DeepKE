@@ -204,7 +204,7 @@ DeepKE-cnSchema特别版为支持中文领域知识图谱构建推出的开箱�
 用户可以直接下载[模型](https://drive.google.com/drive/folders/1zA8Ichx9nzU3GD92ptdyR_nmARB_7ovg)进行使用，具体流程如下：
 
 1. 将下载的模型文件夹命名为`checkpoints`
-2. 修改 `predict.yaml`中的参数`text`为需要预测的文本
+2. 修改[`conf`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/)文件夹中的 `predict.yaml`中的参数`text`为需要预测的文本
 
     使用训练好的模型，只需输入句子“《星空黑夜传奇》是连载于起点中文网的网络小说，作者是啤酒的罪孽”，运行```python predict.py```后可得到结果，结果显示“星空黑夜传奇”实体类型为经过cnschema对齐后的“网络小说”，“起点中文网”为“网站”，“啤酒的罪孽”为“人物。
 
@@ -229,7 +229,7 @@ DeepKE-cnSchema特别版为支持中文领域知识图谱构建推出的开箱�
 
 使用者可以直接下载[模型](https://drive.google.com/drive/folders/1wb_QIZduKDwrHeri0s5byibsSQrrJTEv)使用,步骤如下：
 
-1. 修改 `predict.yaml`中的参数`fp`为下载文件的路径，`embedding.yaml`中`num_relations`为51（关系个数）,`config.yaml`中的参数model为`lm`
+1. 修改[`conf`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/)文件夹中的 `predict.yaml`中的参数`fp`为下载文件的路径，`embedding.yaml`中`num_relations`为51（关系个数）,`config.yaml`中的参数model为`lm`
 2. 进行预测。需要预测的文本及实体对通过终端输入给程序。
 
     ```bash
@@ -286,7 +286,7 @@ DeepKE-cnSchema特别版为支持中文领域知识图谱构建推出的开箱�
 ### [联合三元组抽取](https://github.com/zjunlp/DeepKE/tree/main/example/triple)
 用户可以先将上述模型下载至本地，然后使用[example/triple](https://github.com/zjunlp/DeepKE/tree/main/example/triple)中的代码进行三元组抽取。如果单句中存在超过两个以上的实体数，可能在一些实体对中会存在预测不准确的问题，那是因为这些实体对并没有被加入训练集中进行训练，所以需要进一步判断，具体使用步骤如下：
 
-1. 将`conf`文件夹中的[`predict.yaml`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/predict.yaml)中的`text`修改为预测文本，`nerfp`修改为ner模型文件夹地址，`refp`为re模型地址
+1. 将[`conf`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/)文件夹中的[`predict.yaml`](https://github.com/zjunlp/DeepKE/tree/main/example/triple/cnschema/conf/predict.yaml)中的`text`修改为预测文本，`nerfp`修改为ner模型文件夹地址，`refp`为re模型地址
 2. 进行预测。
 
     ```bash
